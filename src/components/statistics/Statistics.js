@@ -1,17 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { CounterList } from './styledStatistic';
 
 
 export const Statistics = ({ good, neutral, bad, countTotalFeedback, countPositiveFeedbackPercentage }) => {
     return (
         <>
-            <ul>
-                <li>Good:{good}</li>
-                <li>Neutral:{neutral}</li>
-                <li>Bad:{bad}</li>
-                <li>Total: {countTotalFeedback()}</li>
-                <li>Positive feedback: {countPositiveFeedbackPercentage()}</li>
-            </ul>
+            <CounterList>
+                <li className="counterItems good">Good:{good}</li>
+                <li className="counterItems neutral">Neutral:{neutral}</li>
+                <li className="counterItems bad">Bad:{bad}</li>
+                <li className="counterItems total">Total: {countTotalFeedback()}</li>
+                <li className="counterItems positive">Positive feedback: {countPositiveFeedbackPercentage()}</li>
+            </CounterList>
         </>
     )
 }

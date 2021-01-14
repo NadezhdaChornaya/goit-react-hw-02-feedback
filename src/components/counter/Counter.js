@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import Buttons from './buttons/Buttons';
-import Statistics from './statistics/Statistics';
-import Section from './section/Section';
-import Notification from './notification/Notification';
+import Buttons from '../buttons/Buttons';
+import Statistics from '../statistics/Statistics';
+import Section from '../section/Section';
+import Notification from '../notification/Notification';
+import { CounterWrapper } from './styledCounter';
 
 
 export default class Counter extends Component {
@@ -36,9 +37,11 @@ export default class Counter extends Component {
         const { good, neutral, bad } = this.state;
         return (
 
-            <div>
-                <Section title="Please leave feedback">
-                    <Buttons options={this.state} handleCounter={this.handleCounter} />
+            <CounterWrapper>
+                <Section title="Please leave feedback" className="section">
+                    <div className="buttonWrapper">
+                        <Buttons options={this.state} handleCounter={this.handleCounter} className="button" />
+                    </div>
                 </Section>
                 <Section title="Statistics">
                     {(this.countTotalFeedback()) === 0 ?
@@ -52,7 +55,7 @@ export default class Counter extends Component {
                         )}
 
                 </Section>
-            </div>
+            </CounterWrapper>
 
         )
     }

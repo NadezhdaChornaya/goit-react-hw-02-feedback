@@ -1,12 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types';
+import { CounterSection } from './styledSection';
 
 export const Section = ({ title, children }) => {
     return (
-        <section>
-            <h2>{title}</h2>
+        <CounterSection>
+            <h2 className="title">{title}</h2>
             {children}
-        </section>
+        </CounterSection>
     )
 }
 
